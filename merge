@@ -1,0 +1,33 @@
+#!/bin/bash
+# NAME
+#	merge -- Uses Sublime Text diff and merge tool Sublimerge as merge tool.
+#
+# SYNOPSIS
+#	merge FILE_THEIRS FILE_MINE FILE_BASE FILE_MERGED
+#
+# DESCRIPTION
+#	Opens up Sublime merge FILE_THEIRS and FILE_MINE from FILE_BASE into
+#   FILE_BASE using Sublimerge.
+#
+# OPTIONS
+#	-1	?description?
+#
+#
+# ENVIRONMENT
+#	The following environment variables affect the execution of name:
+#	?VAR1?	?description?
+#
+# EXIT STATUS
+#
+# EXAMPLES
+#	?example 1? ?description?
+#		?example 1?
+#
+# BUGS
+#	bug1
+#
+# Written by: Rowland O'Flaherty (rowlandoflaherty.com)
+# Created on: 02/02/14/
+
+#subl -n --wait "$1" "$3" "$2" "$4" --command "sublimerge_diff_views {\"full_screen\": true}"
+subl -n --wait "$1" "$3" "$2" "$4" --command "sublimerge_diff_views"

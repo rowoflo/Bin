@@ -1,0 +1,19 @@
+#!/bin/bash
+# NAME
+#	subl -- Opens Sublime text editor
+#
+# SYNOPSIS
+#	subl [file]
+#
+# DESCRIPTION
+#	Opens Sublime with a new window.
+#   /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
+#
+#
+# EXAMPLES
+#	subl foo
+#
+# Written by: Rowland O'Flaherty (rowlandoflaherty.com)
+# Created on: 02/11/14
+
+"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" -n "$1"

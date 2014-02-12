@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# NAME
+#	displayText -- Display text on the screen.
+#
+# SYNOPSIS
+#	displayText string
+#
+# DESCRIPTION
+#	The string will be displayed on the screen until a key is pressed.
+#
+# OPTIONS	
+#
+# EXAMPLES
+#	Shows "Hello World" on the screen
+#		displayText "Hello World"
+#
+# ENVIRONMENT
+#
+# BUGS
+#
+# Written by: Rowland O'Flaherty (rowlandoflaherty.com)
+# Modified on: 09/05/2009
+
+if [ "$#" -eq 0 ]
+then
+    osascript /Users/rowland/Dropbox/AppleScripts/Handlers/showLargeType.scpt "$(date)"
+fi
+
+if [ "$#" -eq 1 ]
+then
+    osascript /Users/rowland/Dropbox/AppleScripts/Handlers/showLargeType.scpt "$1"
+fi

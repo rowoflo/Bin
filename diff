@@ -1,0 +1,31 @@
+#!/bin/bash
+# NAME
+#	diff -- Uses Sublime Text diff and merge tool Sublimerge as diff tool.
+#
+# SYNOPSIS
+#	diff FILE_LEFT FILE_RIGHT
+#
+# DESCRIPTION
+#	Opens up Sublime and compares FILE_LEFT and FILE_RIGHT using Sublimerge.
+#
+# OPTIONS
+#	-1	?description?
+#	
+#
+# ENVIRONMENT
+#	The following environment variables affect the execution of name:
+#	?VAR1?	?description?
+#
+# EXIT STATUS
+#
+# EXAMPLES
+#	?example 1? ?description?
+#		?example 1?
+#
+# BUGS
+#	bug1
+#
+# Written by: Rowland O'Flaherty (rowlandoflaherty.com)
+# Created on: 02/02/14/
+
+subl -n --wait "$1" "$2" --command "sublimerge_diff_views {\"left_read_only\": true, \"right_read_only\": true}"

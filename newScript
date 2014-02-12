@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# NAME
+#	new_script -- create a new bash shell script.
+#
+# SYNOPSIS
+#	new_script [file name]
+#
+# DESCRIPTION
+#	New script will open TextWrangler with the bash script template. If a name is
+#	provided the new script will be of that file name.
+#
+# Written by: Rowland O'Flaherty (rowland.oflaherty@gmail.com)
+# Modified on: 02/08/2009
+
+scriptName=$1
+cp /Users/rowland/Dropbox/ShellScripts/templates/bash_script_template.sh "$(pwd)/$scriptName"
+dateStr=$($(echo date +%m\/%d\/%y) | sed 's/\//\\\//g')
+sed -e "s/this_script_name/$scriptName/g" -e "s/todays_date/$dateStr/g" $scriptName > $scriptName.tmp && mv $scriptName.tmp $scriptName
+chmod 744 $scriptName
+# open -a /Applications/Emacs.app $scriptName
+subl $scriptName
