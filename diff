@@ -10,7 +10,7 @@
 #
 # OPTIONS
 #	-1	?description?
-#	
+#
 #
 # ENVIRONMENT
 #	The following environment variables affect the execution of name:
@@ -28,4 +28,4 @@
 # Written by: Rowland O'Flaherty (rowlandoflaherty.com)
 # Created on: 02/02/14/
 
-subl -n --wait "$1" "$2" --command "sublimerge_diff_views {\"left_read_only\": true, \"right_read_only\": true}"
+subl_ln -n --wait "$1" "$2" --command "sublimerge_diff_views {\"left_read_only\": true, \"right_read_only\": true}"
