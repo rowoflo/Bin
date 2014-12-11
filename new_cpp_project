@@ -1,0 +1,47 @@
+#!/bin/bash
+# NAME
+#   new_cpp_project -- Creates a new C++ project
+#
+# SYNOPSIS
+#   new_cpp_project ?project_name?
+#
+# DESCRIPTION
+#   ?long description?
+#
+# OPTIONS
+#   -1  ?description?
+#
+#
+# ENVIRONMENT
+#   The following environment variables affect the execution of name:
+#   ?VAR1?  ?description?
+#
+# EXIT STATUS
+#
+# EXAMPLES
+#   ?example 1? ?description?
+#       ?example 1?
+#
+# BUGS
+#   bug1
+#
+# Written by: Creates a new cpp project (rowlandoflaherty.com)
+# Created on: 2014 DEC 11
+
+project_name=$1
+
+if [ -d $project_name ]; then
+    echo ERROR: directory $project_name exist
+    exit 1
+fi
+
+mkdir $project_name
+cd $project_name
+mkdir bin
+mkdir build
+mkdir include
+mkdir lib
+mkdir src
+mkdir test
+cp ~/Dropbox/Cplusplus/Templates/cpp_cmakelists.txt CMakeLists.txt
+sed -i "" s/___project_name___/$project_name/g CMakeLists.txt

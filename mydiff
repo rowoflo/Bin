@@ -1,9 +1,9 @@
 #!/bin/bash
 # NAME
-#	diff -- Uses Sublime Text diff and merge tool Sublimerge as diff tool.
+#	mydiff -- Uses Sublime Text diff and merge tool Sublimerge as diff tool.
 #
 # SYNOPSIS
-#	diff FILE_LEFT FILE_RIGHT
+#	mydiff FILE_LEFT FILE_RIGHT
 #
 # DESCRIPTION
 #	Opens up Sublime and compares FILE_LEFT and FILE_RIGHT using Sublimerge.

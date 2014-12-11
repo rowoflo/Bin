@@ -23,4 +23,4 @@
 # Created on: 02/11/14
 
 # First checks if 7 arguments were passed in
-[ $# -eq 7 ] && diff "$2" "$5"
+[ $# -eq 7 ] && mydiff "$2" "$5"

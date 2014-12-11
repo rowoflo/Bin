@@ -1,0 +1,32 @@
+#!/bin/bash
+# NAME
+# mygrep -- Overload grep command with my favorite options.
+#
+# SYNOPSIS
+# mygrep PATTERN
+#
+# DESCRIPTION
+# Greps PATTERN recurisively from the current folder with
+# default files to include and displays line numbers.
+#
+# OPTIONS
+# -1  ?description?
+#
+#
+# ENVIRONMENT
+# The following environment variables affect the execution of name:
+# ?VAR1?  ?description?
+#
+# EXIT STATUS
+#
+# EXAMPLES
+# ?example 1? ?description?
+#   ?example 1?
+#
+# BUGS
+# bug1
+#
+# Written by: Rowland O'Flaherty (rowlandoflaherty.com)
+# Created on: 05/28/14
+
+grep --color=always -irn --include \*.h --include \*.c --include \*.hpp --include \*.cpp . -e "$1"
