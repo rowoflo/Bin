@@ -37,11 +37,38 @@ fi
 
 mkdir $project_name
 cd $project_name
+
 mkdir bin
 mkdir build
+mkdir doc
 mkdir include
 mkdir lib
 mkdir src
 mkdir test
-cp ~/Dropbox/Cplusplus/Templates/cpp_cmakelists.txt CMakeLists.txt
+
+cp ~/Dropbox/Templates/cpp_project/CMakeLists_txt_template.txt CMakeLists.txt
 sed -i "" s/___project_name___/$project_name/g CMakeLists.txt
+
+cp ~/Dropbox/Templates/cpp_project/dotGitignore_template.txt .gitignore
+sed -i "" s/___project_name___/$project_name/g .gitignore
+
+cp ~/Dropbox/Templates/cpp_project/Doxyfile_template.txt Doxyfile
+sed -i "" s/___project_name___/$project_name/g Doxyfile
+
+cp ~/Dropbox/Templates/cpp_project/index_html_template.txt index.html
+sed -i "" s/___project_name___/$project_name/g index.html
+
+cp ~/Dropbox/Templates/cpp_project/LICENSE_template.txt LICENSE
+
+cp ~/Dropbox/Templates/cpp_project/README_md_template.txt README.md
+sed -i "" s/___project_name___/$project_name/g README.md
+
+cp ~/Dropbox/Templates/cpp_project/sublime-project_template.txt $project_name.sublime-project
+sed -i "" s/___project_name___/$project_name/g $project_name.sublime-project
+
+git init
+git add -A
+git commit -m "Initial commit"
+git branch gh-pages
+
+open $project_name.sublime-project
