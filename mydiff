@@ -28,4 +28,13 @@
 # Written by: Rowland O'Flaherty (rowlandoflaherty.com)
 # Created on: 02/02/14/
 
-subl_ln -n --wait "$1" "$2" --command "sublimerge_diff_views {\"left_read_only\": true, \"right_read_only\": true}"
+number=$(ps aux | grep Sublime | wc -l)
+if [ $number -gt 1 ]; then
+    subl_ln -n --wait "$1" "$2" --command "sublimerge_diff_views {\"left_read_only\": true, \"right_read_only\": true}"
+else
+    open -g /Applications/Sublime\ Text.app/
+    sleep 1.4
+    subl_ln -n --wait "$1" "$2" --command "sublimerge_diff_views {\"left_read_only\": true, \"right_read_only\": true}"
+    osascript -e "tell application \"Sublime Text\" to quit"
+fi
+

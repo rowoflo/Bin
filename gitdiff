@@ -1,9 +1,9 @@
 #!/bin/bash
 # NAME
-#	gitDiff -- Wrapper script to run diff command for Git.
+#	gitdiff -- Wrapper script to run diff command for Git.
 #
 # SYNOPSIS
-#	gitDiff path old-file old-hex old-mode new-file new-hex new-mode
+#	gitdiff path old-file old-hex old-mode new-file new-hex new-mode
 #
 # DESCRIPTION
 #	This script takes in the 7 arguments that Git pass by default when a diff command
