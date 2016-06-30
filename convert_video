@@ -2,8 +2,12 @@
 
 # if no arguments are given, echo the usage string
 if [ $# -lt 1 ]; then
-  echo 'Usage: convert_video [path_to_input] [output_name]' >&2
+  echo 'Usage: convert_video [path_to_input]' >&2
   exit 1
 fi
 
-ffmpeg -i $1 -c:v copy -f mp4 $2".mp4"
+for input_video in "$@"
+do
+    name=${input_video%.h264}
+    ffmpeg -i $name".h264" -c:v copy -f mp4 $name".mp4"
+done

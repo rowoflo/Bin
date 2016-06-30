@@ -1,0 +1,30 @@
+#!/bin/bash
+# NAME
+#   meld -- Opens Meld merge tool
+#
+# SYNOPSIS
+#   meld [file1] [file2]
+#
+# DESCRIPTION
+#   Open Meld
+#   /Applications/Meld.app/Contents/MacOS/Meld
+#
+#
+# EXAMPLES
+#   meld
+#   meld local remote
+#   meld local base remote output
+#
+# Written by: Rowland O'Flaherty (rowlandoflaherty.com)
+# Created on: 06/22/16
+
+if [ "$#" -eq 0 ]; then
+    open -W -a Meld
+elif [ "$#" -eq 2 ]; then
+    open -W -a Meld --args "$1" "$2"
+elif [ "$#" -eq 4 ]; then
+    open -W -a Meld --args --auto-merge "$1" "$2" "$3" --output="$4"
+else
+    echo "Illegal number of parameters"
+fi
+
